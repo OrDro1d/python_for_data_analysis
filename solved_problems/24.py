@@ -1,33 +1,28 @@
-def wave(size, num, last_num=-1):
-    for i in range(2, size):
+N = int(input())
+size, num, flag = 2, 1, False
+while True:
+    for i in range(1, size):
         for j in range(0, i):
             print(num, end=' ')
-            if num == last_num and last_num != -1:
-                return 0
+            if num == N:
+                flag = True
+                break
             num += 1
+        if flag:
+            break
         print()
+    if flag:
+        break
     for i in range(size, 1, -1):
         for j in range(0, i):
             print(num, end=' ')
-            if num == last_num and last_num != -1:
-                return 0
+            if num == N:
+                flag = True
+                break
             num += 1
+        if flag:
+            break
         print()
-    print(num)
-    num += 1
-    return num
-
-
-def wave_builder(last_num):
-    size, num = 2, 1
-    print(num)
-    num += 1
-    while True:
-        num = wave(size, num, last_num)
-        if num == 0:
-            return 0
-        size += 1
-
-
-N = int(input())
-wave_builder(N)
+    if flag:
+        break
+    size += 1
