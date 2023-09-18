@@ -1,12 +1,7 @@
 weird_text = input().split()
 right_words = []
-for i in range(0, len(weird_text)):
-    for j in range(0, len(weird_text)):
-        if i != j and weird_text[i] == weird_text[j]:
-            for k in range(0, len(right_words)):
-                if weird_text[i] == right_words[k]:
-                    break
-            else:
-                right_words.append(weird_text[i])
+for word in weird_text:
+    if weird_text.count(word) > 1 and right_words.count(word) == 0:
+        right_words.append(word)
 right_words.sort()
 print(*right_words)
