@@ -1,11 +1,21 @@
-size, heights = int(input()), list(map(int, input().split()))
-water, point, step, local_height, flag = 0, 0, 0, 0, False
-while True:
-    if heights[point + 1] < heights[point]:
-        local_height = heights[point]
-        for i in range(point + 1, size):
-            if heights[i] >= local_height:
+n = int(input())
+heights = list(map(int, input().split()))
 
+left, right = 0, n - 1
+water, current_height = 0, 0
+
+while left < right:
+    if heights[left] <= heights[right]:
+        if heights[left] > current_height:
+            current_height = heights[left]
         else:
-            water += local_height - heights[i]
+            water += current_height - heights[left]
+        left += 1
+    else:
+        if heights[right] > current_height:
+            current_height = heights[right]
+        else:
+            water += current_height - heights[right]
+        right -= 1
+
 print(water)

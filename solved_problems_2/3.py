@@ -10,8 +10,3 @@ def sort_key(number):
             lil_counter += i
     lil_counter -= len(number) ** 2
     return counter + lil_counter
-
-
-numbers = input().split()
-numbers.sort(reverse=True, key=sort_key)
-print(' '.join(numbers))

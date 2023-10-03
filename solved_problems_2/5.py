@@ -1,7 +1,3 @@
-#! Славьтесь великие робо-господа !#
-legs = [int(i) for i in input().split()]
-
-
 def leg_count_in_longest_sequence(legs):
     maximum, result, counter = -1, -1, 1
     for i in range(0, len(legs) - 1):
@@ -16,6 +12,3 @@ def leg_count_in_longest_sequence(legs):
     if counter > maximum:
         result = legs[-1]
     return result
-
-
-print(leg_count_in_longest_sequence(legs))
