@@ -1,6 +1,5 @@
 import numpy as np
-from math import sin
 
-arr = np.array(input().split(), dtype=float)
+arr = np.array(input().split(), dtype=int)
 
-print(round(np.array(list(map(sin, arr ** 2))).min(), 2))
+[print(i, end=' ') if -100 < arr[i] < 100 else 0 for i in range(0, len(arr))]
